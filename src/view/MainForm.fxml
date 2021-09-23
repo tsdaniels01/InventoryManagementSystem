@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainFormController">
+   <children>
+      <AnchorPane prefHeight="425.0" prefWidth="1000.0">
+         <children>
+            <Label layoutX="43.0" layoutY="27.0" prefHeight="37.0" prefWidth="375.0" text="Inventory Management System">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <VBox layoutX="40.0" layoutY="80.0" prefHeight="275.0" prefWidth="450.0" style="-fx-border-color: black; -fx-border-radius: 10;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Label text="Parts">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="15.0" top="10.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="partSearchTxt" alignment="CENTER" maxWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" promptText="Search by Part ID or Name">
+                     <VBox.margin>
+                        <Insets left="175.0" top="-25.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Button mnemonicParsing="false" onAction="#onActionSearchParts" text="Search">
+                     <VBox.margin>
+                        <Insets left="375.0" top="-25.0" />
+                     </VBox.margin>
+                  </Button>
+                  <TableView fx:id="partsTableView" prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn fx:id="partIdCol" prefWidth="100.0" text="Part ID" />
+                      <TableColumn fx:id="partNameCol" prefWidth="100.0" text="Part Name" />
+                        <TableColumn fx:id="partInventoryCol" prefWidth="100.0" text="Inventory Level" />
+                        <TableColumn fx:id="partPriceCol" prefWidth="150.0" text="Price/ Cost per Unit" />
+                    </columns>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TableView>
+                  <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="450.0" spacing="10.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#onActionAddPartForm" text="Add" />
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onActionModifyPartForm" text="Modify" />
+                        <Button layoutX="62.0" layoutY="10.0" mnemonicParsing="false" onAction="#onActionDeletePart" text="Delete" />
+                     </children>
+                     <VBox.margin>
+                        <Insets right="10.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+            </VBox>
+            <VBox layoutX="510.0" layoutY="80.0" prefHeight="275.0" prefWidth="450.0" style="-fx-border-color: black; -fx-border-radius: 10;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Label text="Products">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="15.0" top="10.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="productSearchTxt" alignment="CENTER" maxWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" promptText="Search by Product ID or Name">
+                     <VBox.margin>
+                        <Insets left="175.0" top="-25.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Button mnemonicParsing="false" onAction="#onActionSearchProducts" text="Search">
+                     <VBox.margin>
+                        <Insets left="375.0" top="-25.0" />
+                     </VBox.margin>
+                  </Button>
+                  <TableView fx:id="productsTableView" prefHeight="200.0" prefWidth="200.0">
+                     <columns>
+                        <TableColumn fx:id="productIdCol" prefWidth="100.0" text="Product ID" />
+                        <TableColumn fx:id="productNameCol" prefWidth="100.0" text="Product Name" />
+                        <TableColumn fx:id="productInventoryCol" prefWidth="100.0" text="Inventory Level" />
+                        <TableColumn fx:id="productPriceCol" prefWidth="150.0" text="Price/ Cost per Unit" />
+                     </columns>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TableView>
+                  <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="450.0" spacing="10.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#onActionAddProductForm" text="Add" />
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onActionModifyProductForm" text="Modify" />
+                        <Button layoutX="62.0" layoutY="10.0" mnemonicParsing="false" onAction="#onActionDeleteProduct" text="Delete" />
+                     </children>
+                     <VBox.margin>
+                        <Insets right="10.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+            </VBox>
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="900.0" layoutY="375.0" mnemonicParsing="false" onAction="#onActionExit" text="Exit" textAlignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>
